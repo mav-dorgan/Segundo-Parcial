@@ -8,7 +8,9 @@
         <link href="https://fonts.googleapis.com/css2?family=Cossette+Texte:wght@400;700&display=swap" rel="stylesheet">
     </head>
     <body>
+        <div id="contenedor">
         <header>
+            <h1>Laurie Anderson</h1>
             <nav>
                 <ul>
                     <li><a href="index.html">Inicio</a></li>
@@ -17,6 +19,39 @@
                 </ul>
             </nav>
         </header>
+        <main>
+            <h2>Repositorio de grabaciones digitales de obras musicales de Laurie Anderson.</h2>
+            <p> A través de esta página podrá gestionar las obras que se desean almacenar y el costo de almacenamiento de cada una.</p>
+            <form action="" method="post" id="formUno">
+                <label for="cantidadObras">Ingrese la cantidad de obras que desea almacenar</label>
+                <input type="number" name="cantidadObras" id="cantidadObras">
+                <label for="transferencia">Ingrese el tiempo de transferencia estimado por cada MB</label>
+                <input type="number" name="transferencia" id="transferencia">
+                <p>milisegundos</p>
+                <label for="costoMensual">Ingrese le costo mensual de almacenamiento por cada MB</label>
+                <p>$</p>
+                <input type="number" name="costoMensual" id="costoMensual">
+            </form>
+            <p id="pasoDos">
+                <!--el contenido de este parrafo se agrega en javascript-->
+            </p>
+            <form action="" method="post" id="formDos">
+                <!--el contenido de este form se agrega en javascript-->
+            </form>
+            <p id="resultados">
+                <!--el contenido de este parrafo se agrega en javascript-->
+            </p>
+            <form action="" method="post" id="reiniciar">
+                <!--el contenido de este form se agrega en javascript-->
+            </form>
+        </main>
+        <footer>
+            <address>
+                <p>Para contactarse escribir a <a href="mailto:laurie@artedigital.com">laurie@artedigital.com</a></p>
+            </address>
+            <p>Nota: Los textos fueron generados por ChatGPT y adaptados a la consigna. Pueden contener errores. Las imágenes fueron recopiladas de Internet únicamente para su uso en este parcial.</p>
+        </footer>
+        </div>
         <script src="js/repositorio.js"></script>
     </body>
 </html>
