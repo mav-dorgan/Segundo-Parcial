@@ -94,9 +94,8 @@ formDos.addEventListener ('submit', function(e) {
     } else {
         guardarObras ();
         agregarResultados();
- /*     bloquearFormDos ();
-        formTres.innerHTML += `<button type="reset" id="reiniciar">Reiniciar</button>`
-*/
+        bloquearFormDos ();
+        reiniciar.innerHTML += `<button type="reset" id="botonReiniciar">Reiniciar</button>`;
     }
 })
 
@@ -211,3 +210,20 @@ function agregarResultados () {
     El presupuesto necesario para mantener funcionando el repositorio durante un año es de $${costoTotal ()}.
     `;
 }
+
+//Bloqueo el paso dos del form
+
+function bloquearFormDos () {
+    let inputs = formDos.querySelectorAll('input');
+
+    inputs.forEach (function(input) {
+        input.disabled=true;
+    });
+}
+
+// Agrego un boton que refresque la página
+//Seria mejor hacerlo con form.submit (); pero no fue visto en clase
+
+reiniciar.addEventListener ('reset', function () {
+    location.reload ();
+})
