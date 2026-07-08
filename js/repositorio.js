@@ -60,7 +60,7 @@ function agregarObra (i) {
             <input type="text" name="nombreObra${i}" id="nombreObra${i}">
             <label for="duracion${i}">Duración</label>
             <input type="number" name="duracion${i}" id="duracion${i}">
-            <p>milisegundos</p>
+            <p>minutos</p>
             <label for="peso${i}">Peso del archivo</label>
             <input type="number" name="peso${i}" id="peso${i}">
             <p>MB</p>
@@ -85,7 +85,6 @@ se deshabilitan los campos sin eliminar el valor ingresado
 se crea un boton de reiniciar*/
 
 let obras = [];
-let totales = [];
 
 formDos.addEventListener ('submit', function(e) {
     e.preventDefault ();
@@ -95,8 +94,9 @@ formDos.addEventListener ('submit', function(e) {
     } else {
         guardarObras ();
         agregarResultados();
-        bloquearFormDos ();
+ /*     bloquearFormDos ();
         formTres.innerHTML += `<button type="reset" id="reiniciar">Reiniciar</button>`
+*/
     }
 })
 
@@ -125,7 +125,7 @@ function verificarDatos (){
 // capturo los datos ingresados en el segundo form y lo guardo en un Array de objetos
 
 function guardarObras () {
-    obras = []
+    obras = [];
     for (let i=1; i <= cantidadObras.value; i++) {
         let obra = {
             nombreObra: document.querySelector(`#nombreObra${i}`).value,
@@ -134,4 +134,80 @@ function guardarObras () {
         };
         obras.push(obra);
     }
+}
+
+//Ya que se deben hacer calculos con las duraciones, primero las guardo todas en un array para facilitar los calculos.
+
+let duraciones = [];
+
+function agregarDuracion () {
+    duraciones = [];
+    for (let i=0; i < obras.length; i++) {
+        duraciones.push (obras[i].duracion);     
+    }   
+    return duraciones;
+}
+
+//Creo una funcion para calcular la duracion total
+
+function sumarDuraciones () {
+    duraciones = agregarDuracion ();
+    let duracionTotal = 0;
+    for (let i=0; i < duraciones.length; i++) {
+    duracionTotal += duraciones[i];
+    }
+    return duracionTotal;
+}
+
+//Creo una funcion para calcular la duracion promedio de las obras.
+
+function calcularPromedio () {
+    let promedio = sumarDuraciones()/cantidadObras.value;
+    return promedio;
+}
+
+//Creo una funcion para sqaber en que posicion del array se encuentra ls obra de mayor duracion.
+//no se calcula solamente el maximo ya que necesito acceder a los otros objetos de la misma posicion del array.
+
+function encontrarMayor() {
+    let maximo = duraciones [0];
+    let posicion = 0;
+    for (let i=0; i < duraciones.length; i++) {
+        if (duraciones[i] > maximo) {
+            maximo = duraciones[i];
+            posicion = [i];
+        }
+    }
+    return posicion;
+}
+
+//Sabiendo la posicion de la obra de maxima duracion, calculo con su peso el tiempo de transferencia necesario para decargarla.
+
+let posicion = encontrarMayor ();
+
+function calcularTiempo () {
+    let tiempo = obras[posicion].peso * transferencia.value;
+    return tiempo;
+}
+
+//Creo una funcion para calcular el presupuesto anual
+
+function costoTotal () {
+    let precioMensual = 0
+    for (let i=0; i< obras.length; i++) {
+        precioMensual += obras[i].peso * costoMensual.value;
+    }
+    let precioAnual = precioMensual * 365;
+    return precioAnual;
+}
+
+//Agrego todos los resultados obtenidos a mi HTML para que se muestren
+
+function agregarResultados () {
+    resultados.innerHTML += `
+    La duración total de las obras es de ${sumarDuraciones()} minutos. <br>
+    La duración promedio es de ${calcularPromedio()} minutos. <br>
+    La obra de mayor duración es ${obras[posicion].nombreObra} y se necesitan ${calcularTiempo ()} milisegundos para descargarla. <br>
+    El presupuesto necesario para mantener funcionando el repositorio durante un año es de $${costoTotal ()}.
+    `;
 }
