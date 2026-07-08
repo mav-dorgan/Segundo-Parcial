@@ -43,12 +43,12 @@ for (i=0; i<albums.length; i++) {
 
 function agregarTarjeta () {
     let tarjeta = `
-    <div id="tarjeta">
+    <div class="tarjeta">
     <p>
         ${albums[i].titulo} <br>
         ${albums[i].año}
     </p>
-    <img src="${albums[i].img}" alt="${albums[i].titulo}" width="15%">
+    <img src="${albums[i].img}" alt="${albums[i].titulo}">
     </div>
     `;
     galeria.innerHTML += tarjeta;
@@ -59,28 +59,20 @@ function agregarTarjeta () {
 
 let botonAchicar = document.querySelector('#achicar');
 let botonAgrandar = document.querySelector('#agrandar');
-let imagenes = document.querySelectorAll ('#tarjeta img');
-let texto = document.querySelectorAll ('#tarjeta p');
+let tarjeta = document.querySelectorAll ('.tarjeta');
 
 // Funcionalidad de los botones para agrandar y achicar las imagenes
 
 botonAgrandar.addEventListener ('click', function (e) {
     e.preventDefault();
-    imagenes.forEach (function(imagenes) {
-        imagenes.style.width = '50%';
-    });
-    texto.forEach (function (texto) {
-        texto.style.fontSize = '1.5rem';
-    });
+    tarjeta.forEach (function(tarjeta) {
+       tarjeta.style.width = "50%";
+    })
 })
 
 botonAchicar.addEventListener ('click', function (e){
     e.preventDefault ();
-    imagenes.forEach (function(imagenes) {
-        imagenes.style.width = '15%';
-    });
-    texto.forEach (function (texto) {
-        texto.style.fontSize = '1rem';
-    });
-
+    tarjeta.forEach (function(tarjeta) {
+       tarjeta.style.width = "30%";
+    })
 })

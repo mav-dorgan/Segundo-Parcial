@@ -1,0 +1,86 @@
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url("../img/fondo.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    margin: 0;
+    padding: 0;
+    font-family: "roboto", sans-serif;
+    font-size: 1rem;
+}
+#contenedor {
+    width: 100%;
+    max-width: 1920px;
+}
+
+main {
+width: 80%;
+margin: 0.5rem auto;
+padding: 2%;
+background-color: aliceblue;
+}
+
+/*----------------------
+header
+------------------------*/
+header {
+    width: 100%;
+    max-width: 1920px;
+    background-color: azure;
+    padding: 0.5rem;
+
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#izq {
+    margin: 0;
+}
+
+blockquote {
+    margin: 0;
+}
+
+nav ul{
+    margin: 0.5rem;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    display: inline-block;
+}
+
+nav a {
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+    padding: 0.5em;
+    text-align: center;
+    text-decoration: none;
+}
+
+/*----------------------
+galeria de fotos
+--------------------- */
+#galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    width:100%;
+    margin: auto;
+}
+.tarjeta {
+    width: 30%;
+    margin: 0.5rem;
+	text-align: center;
+}
+.tarjeta img {
+    width: 100%;
+}
+.tarjeta p {
+    font-size: 1rem;
+    text-align: left;
+}
