@@ -47,6 +47,8 @@ function chequearDatos () {
 
     if (costoMensual.value == '' || Number(costoMensual.value) <= 0) {
     return false };
+
+    return true;
 }
 
 function agregarObra (i) {
@@ -70,4 +72,66 @@ function bloquearForm () {
     transferencia.disabled = true;
     costoMensual.disabled = true;
     botonSiguiente.disabled = true;
+}
+
+
+/*---------------
+SEGUNDO FORM
+---------------*/
+
+/*Al apretar el boton "calcular" se verifican los datos,
+se realizan todos los calculos que se quieren conocer y se muestran los resultados al usuario,
+se deshabilitan los campos sin eliminar el valor ingresado
+se crea un boton de reiniciar*/
+
+let obras = [];
+let totales = [];
+
+formDos.addEventListener ('submit', function(e) {
+    e.preventDefault ();
+
+    if (verificarDatos () == false) {
+        alert ('los campos no pueden quedar vacios y los datos deben ser validos');
+    } else {
+        guardarObras ();
+        agregarResultados();
+        bloquearFormDos ();
+        formTres.innerHTML += `<button type="reset" id="reiniciar">Reiniciar</button>`
+    }
+})
+
+//Verifico los datos
+
+function verificarDatos (){
+    for (let i=1; i <= cantidadObras.value; i++) {
+
+        let nombreObra = document.querySelector(`#nombreObra${i}`).value;
+        let duracion = document.querySelector (`#duracion${i}`).value;
+        let peso = document.querySelector (`#peso${i}`).value;
+
+        if (nombreObra == '') {
+            return false;
+        }
+        if (duracion == '' || (Number(duracion) <= 0)) {
+            return false;
+        }
+        if (duracion == '' || (Number(peso) <= 0)) {
+            return false;
+        }
+    }
+    return true; 
+}
+
+// capturo los datos ingresados en el segundo form y lo guardo en un Array de objetos
+
+function guardarObras () {
+    obras = []
+    for (let i=1; i <= cantidadObras.value; i++) {
+        let obra = {
+            nombreObra: document.querySelector(`#nombreObra${i}`).value,
+            duracion: Number(document.querySelector (`#duracion${i}`).value),
+            peso: Number(document.querySelector (`#peso${i}`).value),
+        };
+        obras.push(obra);
+    }
 }
