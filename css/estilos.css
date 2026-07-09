@@ -1,46 +1,70 @@
+/*------------------
+Aspectos generales
+-------------------*/
+
 * {
     box-sizing: border-box;
 }
 body {
+    margin: 0;
+    padding: 0;
+
     background-image: url("../img/fondo.png");
     background-repeat: repeat;
     background-attachment: fixed;
-    margin: 0;
-    padding: 0;
-    font-family: "roboto", sans-serif;
+
+    font-family: "Cossette Texte", sans-serif;
     font-size: 1rem;
+
 }
-#contenedor {
+.contenedor {
     width: 100%;
     max-width: 1920px;
 }
 
-main {
-width: 80%;
-margin: 0.5rem auto;
-padding: 2%;
-background-color: aliceblue;
+
+h1, h2, h3 {
+    font-family: "Abel", sans-serif;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.2rem;
+}
+
+h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    text-decoration: underline solid;
+    margin-bottom: 1rem;
+}
+
+img {
+    margin: 0.5rem;
 }
 
 /*----------------------
 header
 ------------------------*/
+
 header {
     width: 100%;
     max-width: 1920px;
-    background-color: azure;
     padding: 0.5rem;
 
     display:flex;
     justify-content: space-between;
     align-items: center;
+
+    background:#0d2c3b;
+    color:white;
 }
 
 #izq {
-    margin: 0;
-}
-
-blockquote {
     margin: 0;
 }
 
@@ -54,12 +78,127 @@ nav li {
     display: inline-block;
 }
 
-nav a {
-    font-size: 1.2rem;
-    line-height: 2.2rem;
+nav a:link{
     padding: 0.5em;
     text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+
     text-decoration: none;
+    color:white;
+}
+
+nav a:visited {
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+
+    text-decoration: none;
+    color:rgb(193, 199, 211); 
+}
+
+nav a:hover {
+    padding: 0.5em;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+
+    text-decoration: none;
+    color:white;
+    font-style: italic;
+}
+
+nav a:active {
+    padding: 0.5em;
+    text-align: center;  
+    font-size: 1.2rem;
+    line-height: 2.2rem;
+
+    text-decoration: none;
+    font-weight: bold;
+    color:white;
+}
+
+/*----------------------
+encabezado (dentro del main)
+-----------------------*/
+
+main {
+width: 75%;
+margin: 0.5rem auto;
+padding: 2%;
+
+background-color: aliceblue;
+border-radius: 1rem;
+}
+
+#encabezado {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 2rem;
+}
+
+blockquote {
+    margin: 1rem;
+
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #555
+}
+
+
+/*----------------------
+columnas
+-----------------------*/
+
+.columnasIguales {
+    display:flex;
+    justify-content: center;
+}
+
+.columna {
+    margin: 0.5rem;
+    padding: 1rem;
+    width: 33%;
+
+    background-color: #dbeff3;
+    border-radius: 1rem;
+}
+
+.columnasDistintas {
+    display:flex;
+    justify-content: center;
+}
+
+#columnaUno {
+    width: 60%;
+    margin: 0.5rem;
+    padding: 1rem;
+
+    background-color: #dbeff3;
+    border-radius: 1rem;
+}
+
+#columnaDos {
+    width: 40%;
+    margin: 0.5rem;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    background-color: #dbeff3;
+    border-radius: 1rem;    
+}
+
+#centrar {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
 }
 
 /*----------------------
@@ -75,12 +214,34 @@ galeria de fotos
 .tarjeta {
     width: 30%;
     margin: 0.5rem;
+    padding: 0.5rem;
 	text-align: center;
+
+    background-color: #dbeff3;
+    border-radius: 1rem;
 }
 .tarjeta img {
     width: 100%;
+    margin: auto;
+    padding: 0.2rem;
 }
 .tarjeta p {
     font-size: 1rem;
     text-align: left;
+}
+
+/*-----------
+footer
+------------*/
+
+footer {
+    width: 100%;
+    max-width: 1920px;
+    background-color: azure;
+    padding: 0.5rem;
+}
+
+footer a {
+    color:rgb(59, 60, 116);
+    text-decoration: none;
 }
