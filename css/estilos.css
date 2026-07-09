@@ -29,12 +29,12 @@ h1, h2, h3 {
 
 h1 {
     font-size: 2.5rem;
-    margin-bottom: 0.2rem;
 }
 
 h2 {
     font-size: 2rem;
     margin-bottom: 0.5rem;
+    margin-top: 0;
 }
 
 h3 {
@@ -121,13 +121,14 @@ nav a:active {
 }
 
 /*----------------------
-encabezado (dentro del main)
+Main
 -----------------------*/
 
 main {
 width: 75%;
 margin: 0.5rem auto;
 padding: 2%;
+padding-top: 0;
 
 background-color: aliceblue;
 border-radius: 1rem;
@@ -148,6 +149,24 @@ blockquote {
     font-style: italic;
     font-size: 1.2rem;
     color: #555
+}
+
+button {
+    margin: 0.5rem;
+    margin-left: 0;
+    padding: 0.5rem;
+    border: none;
+
+    border-radius: 0.2rem;
+    background:#1d5972;
+    color:white;
+
+    font-family:"Abel", sans-serif;
+    font-size: 1rem;
+}
+
+button:hover{
+    background:#2b7896;
 }
 
 
@@ -244,4 +263,137 @@ footer {
 footer a {
     color:rgb(59, 60, 116);
     text-decoration: none;
+}
+
+/*-----------------
+REPOSITORIO FORMS
+-----------------*/
+
+/*---------------
+Formulario Uno
+----------------*/
+
+#formUno{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    text-align: center;
+
+    background:#dbeff3;
+    padding:2rem;
+    border-radius:1rem;
+}
+
+#formUno label {
+    width: 100%;
+    text-align: left;
+    font-weight: bold;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+#formUno p {
+    margin-left: 1rem;
+}
+
+#formUno input {
+    margin: 0;
+    width: 20%;
+    height: 2rem;
+    padding: 0.5rem;
+    border: 0.1rem solid #8ab8c6;
+    border-radius: 0.2rem;
+}
+
+#formUno button, #formDos button, #reiniciar button {
+    width: 100%;
+    margin-top: 2rem;
+}
+
+/*------------------
+Form Dos
+-------------------*/
+
+#pasoDos {
+    font-size:1.2rem;
+    margin:2rem 0 1rem;
+    font-weight:bold;
+}
+
+#formDos {
+    display:flex;
+    flex-wrap:wrap;
+    justify-content: center;
+}
+
+fieldset {
+    display:flex;
+    flex-wrap: wrap;
+
+    width: 30%;
+    gap: 0.5rem;
+    padding:1.2rem;
+
+    border:none;
+    border-radius:1rem;
+    background:#dbeff3;
+}
+
+legend {
+    font-family:"Abel", sans-serif;
+    font-size:1.3rem;
+    font-weight:bolder;
+    color:#0d3d4f;
+}
+
+fieldset label {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    width: 100%;
+    font-weight: bold;
+}
+
+fieldset input{
+    padding: 0.5rem;
+    width: 60%;
+    height: 2rem;
+    border: 0.1rem solid #8ab8c6;
+    border-radius:0.2rem;
+}
+
+fieldset p {
+    margin-top: 0.2rem;
+    margin-left: 1rem;
+}
+
+#calcular {
+    align-self: baseline;
+    margin-top:1rem;
+}
+
+/*---------------------
+Campos deshabilitados
+----------------------*/
+
+input:disabled {
+    background:#d8d9df;
+    border: none;
+}
+
+button:disabled {
+    background:#999;
+}
+
+/*-----------------
+Resultados
+-------------------*/
+
+#resultados p{
+    margin-top:2rem;
+    padding:2rem;
+
+    background:#8ab8c6;
+
+    border-radius:1rem;
+    line-height:1.8;
 }

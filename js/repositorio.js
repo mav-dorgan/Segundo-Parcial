@@ -204,10 +204,11 @@ function costoTotal () {
 
 function agregarResultados () {
     resultados.innerHTML += `
-    La duración total de las obras es de ${sumarDuraciones()} minutos. <br>
-    La duración promedio es de ${calcularPromedio()} minutos. <br>
-    La obra de mayor duración es ${obras[posicion].nombreObra} y se necesitan ${calcularTiempo ()} milisegundos para descargarla. <br>
-    El presupuesto necesario para mantener funcionando el repositorio durante un año es de $${costoTotal ()}.
+    <p>La duración total de las obras es de <strong>${sumarDuraciones()} minutos</strong>. <br>
+    La duración promedio es de <strong>${calcularPromedio()} minutos</strong>. <br>
+    La obra de mayor duración es <strong>${obras[posicion].nombreObra}</strong> y se necesitan <strong>${calcularTiempo ()} milisegundos</strong> para descargarla. <br>
+    El presupuesto necesario para mantener funcionando el repositorio durante un año es de <strong>$${costoTotal ()}</strong>.
+    </p>
     `;
 }
 
@@ -215,10 +216,11 @@ function agregarResultados () {
 
 function bloquearFormDos () {
     let inputs = formDos.querySelectorAll('input');
-
+    let botonCalcular = document.querySelector ('#calcular')
     inputs.forEach (function(input) {
         input.disabled=true;
     });
+    botonCalcular.disabled=true;
 }
 
 // Agrego un boton que refresque la página
