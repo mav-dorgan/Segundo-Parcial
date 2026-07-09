@@ -4,32 +4,32 @@ let albums = [
     {
         titulo: 'Landfall',
         año: '2018',
-        img: 'img/galeria/galeria-1.jpg'
+        img: 'img/Galeria/Galeria-1.jpg'
     },
     {
         titulo: 'Heart of a Dog',
         año: '2015',
-        img: 'img/galeria/galeria-2.jpg'
+        img: 'img/Galeria/Galeria-2.jpg'
     },
     {
         titulo: 'Homeland',
         año: '2010',
-        img: 'img/galeria/galeria-3.jpg'
+        img: 'img/Galeria/Galeria-3.jpg'
     },
     {
         titulo: 'Live in New York',
         año: '2002',
-        img: 'img/galeria/galeria-4.jpg'
+        img: 'img/Galeria/Galeria-4.jpg'
     },
     {
         titulo: 'Life on a String',
         año: '2001',
-        img: 'img/galeria/galeria-5.jpg'
+        img: 'img/Galeria/Galeria-5.jpg'
     },
     {
         titulo: 'Talk Normal: The Laurie Anderson Anthology',
         año: '2000',
-        img: 'img/galeria/galeria-6.jpg'
+        img: 'img/Galeria/Galeria-6.jpg'
     },
 ]
 
