@@ -137,16 +137,6 @@ function guardarObras () {
 
 //Ya que se deben hacer calculos con las duraciones, primero las guardo todas en un array para facilitar los calculos.
 
-/*let duraciones = [];
-
-function agregarDuracion () {
-    duraciones = [];
-    for (let i=0; i < obras.length; i++) {
-        duraciones.push (obras[i].duracion);     
-    }   
-    return duraciones;
-}
-*/
 //Creo una funcion para calcular la duracion total
 
 function sumarDuraciones () {
